@@ -78,3 +78,18 @@ console.log(impeachTrumpSplice(presidents)); // ["Obama", "Bush", "Clinton"]
 
 // F.
 console.log('\nOpdracht F.');
+
+let stringsTogether = function(array){
+    console.log(array.join(' '));
+}
+console.log(stringsTogether(['Winc', 'Academy', 'is', 'fun', ';-}'])) 
+//result: "Winc Academy is fun ;-}"
+
+// G.
+console.log('\nOpdracht G.');
+
+let combineArrays = function(array, array2){
+    console.log(array.concat(array2));
+}
+combineArrays([1,2,3], [4,5,6]) 
+// resultaat: [1,2,3,4,5,6]
