@@ -20,15 +20,10 @@ Dank je wel Niels.
 // A.
 console.log('\nOpdracht A.');
 
-let baseArray = [
-    {expressions: "nice"},
-    {expressions: "awesome"},
-    {expressions: "amazing"},
-]
-
 const addTheWordCool = function(array){
     array.push('cool');
     // console.log('functionArray ' + array);
+    return array;
 }
 console.log("Add cool:", addTheWordCool(["nice", "awesome", "amazing"]));
 // result: ["nice", "awesome", "amazing", "cool"]
@@ -37,7 +32,8 @@ console.log("Add cool:", addTheWordCool(["nice", "awesome", "amazing"]));
 console.log('\nOpdracht B.');
 
 let amountOfElementsInArray = function(amountArray){
-    console.log(amountArray.length);
+    // console.log(amountArray.length);
+    return amountArray.length;
 }
 
 console.log(amountOfElementsInArray(['apples', 'pears', 'lemons'])); 
