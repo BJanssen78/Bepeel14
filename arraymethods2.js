@@ -66,16 +66,44 @@ isItalyInTheGreat7(['Canada', 'France','Germany','Italy','Japan','United Kingdom
 // result should be true
 
 console.log('\nOpdracht E.');
+
 let tenfold = function(array){
-    let element2 = array.forEach(n => {
-        n * 10;
-        console.log(n);
-        // return n;
+    let newArray = [];
+    array.forEach((n) =>{
+        newArray.push(n * 10);
     });
-    // console.log(n);
-    console.log(element2)
-    // return element2;
+    return newArray;
 };
 
 console.log(tenfold([1, 4, 3, 6, 9, 7, 11]))
 // result should be [10, 40, 30, 60, 90, 70, 110]
+
+// console.log('\nOpdracht E. .map');
+
+let tenfoldm = function(array){
+    let element2 = array.map(n => n * 10);
+    // console.log(element2);
+    return element2;
+};
+
+// console.log(tenfoldm([1, 4, 3, 6, 9, 7, 11]))
+// result should be [10, 40, 30, 60, 90, 70, 110]
+
+console.log('\nOpdracht F.');
+
+let isBelow100 = function(array){
+    let number = array.every(n => n < 100);
+    return number;
+}
+console.log(isBelow100([1, 81, 4, 53, 3, 6, 79, 2, 43, 7, 28, 101, 11, 77, 84, 98 ]))
+// result should be: false
+
+console.log('\nOpdracht G.');
+
+let bigSum = function(array){
+    const initN = 0;
+    let sum = array.reduce((previousN, currentN) => previousN + currentN, initN);
+    return sum;
+}
+console.log(bigSum([1, 81, 4, 53, 3, 6, 79, 2, 43, 7, 28, 11, 77, 84, 98, 101, 206, 234]))
+// result should be 1118
