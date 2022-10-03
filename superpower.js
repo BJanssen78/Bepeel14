@@ -138,4 +138,4 @@ const superheroes = [
     ))
 
     // note to myself.
-    // alles mappen, en in nieuwe array stoppen, voorbeeld zie arraymethods2.js
+    // alles mappen, en in nieuwe array stoppen, voorbeeld zie arraymethods2.js en cast.js
