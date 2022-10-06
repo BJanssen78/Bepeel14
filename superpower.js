@@ -7,7 +7,7 @@ Dank je wel Niels.
     console.clear();
     const currentdate = new Date();
     console.log(
-        `>>> \x1b[32m💾 Bepeel Development \x1b[0m <<< ${
+        `>>> \x1b[32m Bepeel Development \x1b[0m <<< ${
             currentdate.getHours() +
             ":" +
             currentdate.getMinutes() +
@@ -125,17 +125,20 @@ const superheroes = [
     }
     ]
 
-    // console.log(superheroes);
-    // console.log(superheroes.map(heroName => heroName.name));
-    // console.log(superheroes.map(heroWeight => heroWeight.name, heroWeight.weight));
-    console.log(superheroes.map(heroName => heroName.weight, heroName.name));
-    // console.log(heroWeight(superheroes));
-    console.log(superheroes.map(heroWeight => {
-        let lightHero = [];
-        if (heroWeight.weight < 190){
-            lightHero.push(heroWeight.name);
-        }}       
-    ))
+// console.log(superheroes);
+// console.log(superheroes.map(heroName => heroName.name));
 
-    // note to myself.
-    // alles mappen, en in nieuwe array stoppen, voorbeeld zie arraymethods2.js en cast.js
+const lightWeightHero = (superheroes.filter(lightWeight => lightWeight.weight < 190));
+// console.log('Light weight heroes\n');
+// console.log(lightWeightHero);
+
+const middleWeightHero = (superheroes.filter(middleWeight => middleWeight.weight == 200));
+// console.log('Middle weight heroes\n');
+// console.log(middleWeightHero);
+
+const firstAppearance = [];
+let firstArray = (superheroes.map(first => {
+    let heroString = ('The hero ' + first.name + ' had his/her first appearance in comic ' + first.first_appearance);
+    firstAppearance.push(heroString)}));
+
+console.log(firstAppearance);
