@@ -141,4 +141,29 @@ let firstArray = (superheroes.map(first => {
     let heroString = ('The hero ' + first.name + ' had his/her first appearance in comic ' + first.first_appearance);
     firstAppearance.push(heroString)}));
 
-console.log(firstAppearance);
+// console.log(firstAppearance);
+
+const dcComic = [];
+let dcSuperHero = (dcComic.push(superheroes.filter(dcHero => dcHero.publisher === 'DC Comics')));
+// let dcWeight = (dcComic.filter(heroWeight => console.log(heroWeight.weight)));
+
+// console.log(dcWeight);
+
+    const zeroCount = 0;
+    // const sumDcWeight = dcComic.weight.reduce(
+    //     (previousValue, currentValue) => previousValue + currentValue, initialValue);
+
+// console.log(dcWeight);
+// console.log(weight);
+// return weight;
+
+console.log(dcComic);
+// console.log(superheroes.weight);
+// console.log(dcSuperHero);
+// console.log(sumDcWeight);
+
+const marvelComic = [];
+let marvelSuperHero = (superheroes.filter(marvelHero => marvelHero.publisher == 'Marvel Comics'));
+
+// console.log(marvelSuperHero);
+// console.log(marvelComic);
