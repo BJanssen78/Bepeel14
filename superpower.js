@@ -143,27 +143,39 @@ let firstArray = (superheroes.map(first => {
 
 // console.log(firstAppearance);
 
-const dcComic = [];
+let dcComic = [];
 let dcSuperHero = (dcComic.push(superheroes.filter(dcHero => dcHero.publisher === 'DC Comics')));
-// let dcWeight = (dcComic.filter(heroWeight => console.log(heroWeight.weight)));
 
-// console.log(dcWeight);
+const totalWeightDC = 0;
+let sumDcWeight = [];
+let dcHeroWeight = (
+    sumDcWeight.push(
+    superheroes.filter(hero => hero.publisher === 'DC Comics')
+        .map(w => +w.weight)
+        .reduce((previous, current) => previous + current, totalWeightDC)));
 
-    const zeroCount = 0;
-    // const sumDcWeight = dcComic.weight.reduce(
-    //     (previousValue, currentValue) => previousValue + currentValue, initialValue);
-
-// console.log(dcWeight);
-// console.log(weight);
-// return weight;
-
-console.log(dcComic);
-// console.log(superheroes.weight);
-// console.log(dcSuperHero);
+// console.log(dcComic);
 // console.log(sumDcWeight);
 
 const marvelComic = [];
-let marvelSuperHero = (superheroes.filter(marvelHero => marvelHero.publisher == 'Marvel Comics'));
+const totalWeightMarvel = 0;
+let marvelSuperHero = (marvelComic.push(superheroes.filter(dcHero => dcHero.publisher === 'Marvel Comics')));
 
-// console.log(marvelSuperHero);
+let sumMarvelWeight = [];
+let marvelHeroWeight = (
+    sumMarvelWeight.push(
+    superheroes.filter(hero => hero.publisher === 'Marvel Comics')
+        .map(w => +w.weight)
+        // .reduce((previous, current) => previous + current, totalWeightMarvel)
+        ));
+
 // console.log(marvelComic);
+console.log(sumMarvelWeight);
+
+const maxWeight = 0;
+// console.log(Math.max(sumDcWeight));
+console.log(Math.max(superheroes.filter(maxWeight => maxWeight.weight != 'unknown' >= 0)
+        .map(mW => +mW.weight))
+        
+    //    .reduce((previous, current) => previous + current, maxWeight)
+    );
