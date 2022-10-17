@@ -1,36 +1,33 @@
 
-let btnBigFive = document.querySelectorAll('button.big-five-button');
+let btnBigFive = document.querySelectorAll('big-five-list .big-five-button');
 let btnRemoveList = document.getElementById('remove-all-button');
 let btnRemoveFirst = document.getElementById('remove-first-item-button');
-const bigFiveListUl = document.querySelector('div ul.big-five-list');
+const bigFiveListUl = document.querySelector('div ul');
 
-console.log(bigFiveListUl);
+// console.log(bigFiveListUl);
 
 bigFiveListUl.addEventListener('click', function(e){
-    if(e.target.ClassName == 'big-five-button'){
+    let btnTxt = e.target.textContent; //tekst van de list item
+    console.log(btnTxt);
+    // console.log(e.target);
+    // console.log(e.target.parentElement);
+    // console.log(e.target.parentNode);
+
+    if(e.target.className == 'big-five-button'){
         const li = e.target.parentElement;
+        // console.log(li);
+
         let btnTxt = e.target.textContent; //tekst van de list item
-        console.log(btnTxt);
-        bigFiveListUl.removeChild(li)
 
+        li.parentNode.removeChild(li)
 
+        let newLi = document.createElement('li');
+        let spottedList = document.getElementById('spotted-animals-list');
+        spottedList.appendChild(newLi)
+        newLi.setAttribute('class', 'spotted-animals-list-item');
+        newLi.innerHTML = btnTxt;
     }
 });
-
-// Array.from(btnBigFive).forEach(function(btn){
-//     btn.addEventListener('click', function(e){
-//         let btnTxt = e.target.textContent;
-
-//         const li = e.target.parentElement;
-//         li.parentNode.removeChild(li)
-
-//         let newLi = document.createElement('li');
-//         let spottedList = document.getElementById('spotted-animals-list');
-//         spottedList.appendChild(newLi)
-//         newLi.setAttribute('class', 'spotted-animals-list-item');
-//         newLi.innerHTML = btnTxt;
-//     })
-// });
 
 btnRemoveFirst.addEventListener('click', function(e){
 
@@ -52,3 +49,6 @@ btnRemoveFirst.addEventListener('click', function(e){
     
 });
 
+btnRemoveList.addEventListener('click', function(e){
+
+});
