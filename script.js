@@ -4,18 +4,14 @@ let btnRemoveList = document.getElementById('remove-all-button');
 let btnRemoveFirst = document.getElementById('remove-first-item-button');
 const bigFiveListUl = document.querySelector('div ul');
 
-// console.log(bigFiveListUl);
+
+// console.log(spottedListLi);
 
 bigFiveListUl.addEventListener('click', function(e){
     let btnTxt = e.target.textContent; //tekst van de list item
-    console.log(btnTxt);
-    // console.log(e.target);
-    // console.log(e.target.parentElement);
-    // console.log(e.target.parentNode);
 
     if(e.target.className == 'big-five-button'){
         const li = e.target.parentElement;
-        // console.log(li);
 
         let btnTxt = e.target.textContent; //tekst van de list item
 
@@ -49,6 +45,25 @@ btnRemoveFirst.addEventListener('click', function(e){
     
 });
 
-btnRemoveList.addEventListener('click', function(e){
 
+btnRemoveList.addEventListener('click', function(e){
+    const spottedListLi = document.querySelectorAll('#spotted-animals-list .spotted-animals-list-item');
+
+    Array.from(spottedListLi).forEach(function(list){
+        let txtList = list.textContent;
+
+        let newLi = document.createElement('li');
+        let newBtn = document.createElement('button');
+        let li = list.parentElement;
+        // console.log(li);
+
+        bigFiveListUl.appendChild(newLi);
+        newLi.appendChild(newBtn);
+        newLi.setAttribute('class', 'big-five-list-item');
+        newBtn.setAttribute('class', 'big-five-button');
+        newBtn.innerHTML = txtList;
+
+        li.parentNode.removeChild(li);
+    });
+    
 });
