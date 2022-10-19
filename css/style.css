@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#header {
+  background-color: black;
+  color: red;
+  text-shadow: 1.5px 1.5px yellow;
+  font-size: 6vh;
+  height: 80px;
+  text-align: center;
+  padding-top: 25px;
+}
+
+#navigatie {
+  background-color: yellow;
+  color: black;
+  border-top: 4px solid red;
+  border-bottom: 4px solid red;
+}
+#navigatie .navigatie-lijst {
+  text-align: center;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+#navigatie .navigatie-lijst .navigatie-item {
+  display: inline-block;
+  padding: 1em 1vh;
+  font-size: 2vh;
+  font-weight: 600;
+  width: 20%;
+}
+#navigatie .navigatie-lijst .navigatie-item:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#aside {
+  color: yellow;
+}
+#aside #label {
+  color: yellow;
+}/*# sourceMappingURL=style.css.map */
