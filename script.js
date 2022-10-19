@@ -63,7 +63,7 @@ btnRemoveList.addEventListener('click', function(e){
         newBtn.setAttribute('class', 'big-five-button');
         newBtn.innerHTML = txtList;
 
-        li.parentNode.removeChild(li);
+        li.removeChild(list);
     });
     
 });
