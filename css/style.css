@@ -42,6 +42,7 @@ body {
 #side-menu {
   color: yellow;
   font-size: 3vw;
+  margin-top: 10px;
 }
 #side-menu .side-radio-label {
   display: grid;
