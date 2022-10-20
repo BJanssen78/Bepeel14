@@ -1,10 +1,11 @@
 @import './mixins';
+@import './variables';
 
 
 body{
     margin: 0;
     padding: 0;
-    // background-color: black;
+    background-color: black;
 }
 #header{
     background-color: black;
@@ -40,9 +41,19 @@ body{
         }
     }
 }
-#aside{
+#side-menu{
+    // width: 40%;
     color: yellow;
-    #label{
-        color: yellow;
+    font-size: 3vw;
+
+    .side-radio-label{
+        display: grid;
+        grid-template-columns: 1em auto;
+        gap: 1.2em;
+        padding: 5px 0;
+        align-items: center;
+    }
+    input[type="radio"]{
+    @include radio-input;
     }
 }
