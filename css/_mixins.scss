@@ -25,8 +25,21 @@
     &:checked::before{
         transform: scale(1);
     }
-    // &:focus{
-    //     outline: max(2px, 0.15em) solid currentColor;
-    //     outline-offset: max(2px, 0.15em);
-    // }
+}
+
+@mixin poster {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    width: 90%;
+    padding: 25px;
+    .movie-poster{
+        border: 1px solid yellow;
+        max-width: 25%;
+        &:hover{
+            opacity: 0.2;
+        }
+    }
 }

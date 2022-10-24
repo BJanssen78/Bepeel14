@@ -41,11 +41,23 @@ body{
         }
     }
 }
+
+.main-container{
+    display: grid;
+    grid-template-columns: 1fr, 1fr;
+}
 #side-menu{
-    // width: 40%;
     color: yellow;
-    font-size: 3vw;
+    font-size: 0.9em;
     margin-top: 10px;
+    text-align: center;
+    
+    .side-lijst{
+        .side-item{
+            display: inline-block;
+            padding: 0 10px;
+        }
+    }
 
     .side-radio-label{
         display: grid;
@@ -57,4 +69,10 @@ body{
     input[type="radio"]{
     @include radio-input;
     }
+}
+
+#content{
+    text-align: center;
+    
+    @include poster;
 }
