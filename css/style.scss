@@ -42,10 +42,6 @@ body{
     }
 }
 
-.main-container{
-    display: grid;
-    grid-template-columns: 1fr, 1fr;
-}
 #side-menu{
     color: yellow;
     font-size: 0.9em;
@@ -73,6 +69,6 @@ body{
 
 #content{
     text-align: center;
-    
+
     @include poster;
 }
