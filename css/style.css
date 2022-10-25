@@ -90,12 +90,13 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 25px;
-  width: 90%;
   padding: 25px;
+}
+#content .movie-poster-link {
+  width: 100;
 }
 #content .movie-poster {
   border: 1px solid yellow;
-  max-width: 25%;
 }
 #content .movie-poster:hover {
   opacity: 0.2;

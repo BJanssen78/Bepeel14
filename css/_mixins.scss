@@ -33,11 +33,10 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 25px;
-    width: 90%;
     padding: 25px;
     .movie-poster{
         border: 1px solid yellow;
-        max-width: 25%;
+        // max-width: 25%;
         &:hover{
             opacity: 0.2;
         }

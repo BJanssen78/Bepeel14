@@ -70,5 +70,11 @@ body{
 #content{
     text-align: center;
 
+    .movie-poster-link{
+        width: 100;
+    }
+
     @include poster;
+
+    
 }

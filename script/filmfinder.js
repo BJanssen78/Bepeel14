@@ -245,18 +245,21 @@ const movies = [{
 },
 ];
 
+// Vaste variablen
+const filterLijst = document.querySelectorAll('#side-list .side-radio-option');
 const imgHolder = document.querySelector('#content');
-// let createImg = document.createElement('img');
-// imgHolder.appendChild(createImg);
+const imdbMainLink = 'https://www.imdb.com/title/';
 
-// createImg.setAttribute('class', 'movie-poster');
-// createImg.setAttribute('src', movies.poster);
+movies.forEach(function(e){// Basis vulling
 
-movies.forEach(function(e){
-    console.log(e.title);
-
+    let createLink = document.createElement('a');
     let createImg = document.createElement('img');
-    imgHolder.appendChild(createImg);
+    imgHolder.appendChild(createLink);
+    createLink.appendChild(createImg);
+
+    createLink.setAttribute('class', 'movie-poster-link');
+    createLink.setAttribute('href', imdbMainLink + e.imdbID + '/');
+    createLink.setAttribute('target', '_blank');
     
     createImg.setAttribute('class', 'movie-poster');
     createImg.setAttribute('src', e.poster);
@@ -265,5 +268,21 @@ movies.forEach(function(e){
 
 });
 
-const filterLijst = document.querySelectorAll('#side-list .side-radio-option');
+
 console.log(filterLijst);
+Array.from(filterLijst).forEach(function(radio){
+    radio.addEventListener('click', function(e){
+        // console.log(e.target.title);
+
+        if(e.target.title === 'Avengers'){
+            let titleSearch = e.target.title;
+            let searchTitle = titleSearch.toString(titleSearch.search(titleSearch));
+            const search = movies.filter(titleSearch => titleSearch.title === searchTitle);
+            console.log(searchTitle);
+            console.log(titleSearch);
+            console.log(search);
+        }
+
+    })
+
+});
