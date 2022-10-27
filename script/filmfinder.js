@@ -269,20 +269,17 @@ movies.forEach(function(e){// Basis vulling
 });
 
 
-console.log(filterLijst);
+// console.log(filterLijst);
 Array.from(filterLijst).forEach(function(radio){
     radio.addEventListener('click', function(e){
         // console.log(e.target.title);
-
-        if(e.target.title === 'Avengers'){
-            let titleSearch = e.target.title;
-            let searchTitle = titleSearch.toString(titleSearch.search(titleSearch));
-            const search = movies.filter(titleSearch => titleSearch.title === searchTitle);
-            console.log(searchTitle);
-            console.log(titleSearch);
-            console.log(search);
+        let movieTitle = e.target.title;
+        console.log(movieTitle);
+        
+        if(movieTitle == 'Avengers'){
+            let result = (movies.filter(titel => titel.title == movieTitle).includes(movieTitle));
+            // console.log(titel);
+            console.log(result);
         }
 
-    })
-
-});
+})});
