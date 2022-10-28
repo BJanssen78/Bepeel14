@@ -274,12 +274,15 @@ Array.from(filterLijst).forEach(function(radio){
     radio.addEventListener('click', function(e){
         // console.log(e.target.title);
         let movieTitle = e.target.title;
+        movieTitle.toString();
         console.log(movieTitle);
         
         if(movieTitle == 'Avengers'){
             let result = (movies.filter(titel => titel.title == movieTitle).includes(movieTitle));
             // console.log(titel);
             console.log(result);
+            let result2 = movies.match(movieTitle);
+            console.log(result2);
         }
 
 })});
