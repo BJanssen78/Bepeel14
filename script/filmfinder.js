@@ -274,15 +274,23 @@ Array.from(filterLijst).forEach(function(radio){
     radio.addEventListener('click', function(e){
         // console.log(e.target.title);
         let movieTitle = e.target.title;
-        movieTitle.toString();
-        console.log(movieTitle);
+        let stringTitel = movieTitle.toString();
+        console.log(stringTitel);
         
         if(movieTitle == 'Avengers'){
             let result = (movies.filter(titel => titel.title == movieTitle).includes(movieTitle));
             // console.log(titel);
-            console.log(result);
-            let result2 = movies.match(movieTitle);
+            // console.log(result);
+            let result2 = movies.indexOf(stringTitel);
             console.log(result2);
+            let result3 = movies.find(titel => titel.title != stringTitel);
+            console.log(result3);
+            let result4 = movies.filter(e => e.title == stringTitel);
+            console.log(result4);
+            let result5 = movies.includes(stringTitel);
+            console.log(result5);
+            // let result6 = movies.matchAll(/stringTitel/gi);
+            // console.log(result6);
         }
 
 })});
