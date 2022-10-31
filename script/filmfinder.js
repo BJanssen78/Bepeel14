@@ -249,8 +249,11 @@ const movies = [{
 const filterLijst = document.querySelectorAll('#side-list .side-radio-option');
 const imgHolder = document.querySelector('#content');
 const imdbMainLink = 'https://www.imdb.com/title/';
+const currentDate = new Date();
+const currentYear = currentDate.getFullYear();
+const opdrachtJaar = '2000';
 
-movies.forEach(function(e){// Basis vulling
+let basicList = movies.forEach(function(e){// Basis vulling
 
     let createLink = document.createElement('a');
     let createImg = document.createElement('img');
@@ -269,28 +272,130 @@ movies.forEach(function(e){// Basis vulling
 });
 
 
-// console.log(filterLijst);
 Array.from(filterLijst).forEach(function(radio){
     radio.addEventListener('click', function(e){
-        // console.log(e.target.title);
+        // Capture search titel and convert to string
         let movieTitle = e.target.title;
         let stringTitel = movieTitle.toString();
-        console.log(stringTitel);
+        // console.log(stringTitel);
+
+        if(movieTitle == 'New-movies'){
+            // console.log(currentYear);
+            let result = movies.filter(year => year.year >= opdrachtJaar);
+            // let result = movies.filter(year => year.year >= currentYear);
+            let sortedResult = result.sort((yearA, yearB) => yearA - yearB);
+            console.log(sortedResult);
+
+            // Remove basic list
+            imgHolder.replaceChildren();
+
+            // create new list
+            result.forEach(function(e){
+            let createLink = document.createElement('a');
+            let createImg = document.createElement('img');
+            imgHolder.appendChild(createLink);
+            createLink.appendChild(createImg);
+
+            createLink.setAttribute('class', 'movie-poster-link');
+            createLink.setAttribute('href', imdbMainLink + e.imdbID + '/');
+            createLink.setAttribute('target', '_blank');
+
+            createImg.setAttribute('class', 'movie-poster');
+            createImg.setAttribute('src', e.poster);
+            createImg.setAttribute('alt', e.title);
+            createImg.setAttribute('title', e.title);
+        })}
         
         if(movieTitle == 'Avengers'){
-            let result = (movies.filter(titel => titel.title == movieTitle).includes(movieTitle));
-            // console.log(titel);
-            // console.log(result);
-            let result2 = movies.indexOf(stringTitel);
-            console.log(result2);
-            let result3 = movies.find(titel => titel.title != stringTitel);
-            console.log(result3);
-            let result4 = movies.filter(e => e.title == stringTitel);
-            console.log(result4);
-            let result5 = movies.includes(stringTitel);
-            console.log(result5);
-            // let result6 = movies.matchAll(/stringTitel/gi);
-            // console.log(result6);
-        }
+            let result2 = movies.filter(titel => titel.title.includes(stringTitel));
 
-})});
+            // Remove basic list
+            imgHolder.replaceChildren();
+
+            // create new list
+            result2.forEach(function(e){
+            let createLink = document.createElement('a');
+            let createImg = document.createElement('img');
+            imgHolder.appendChild(createLink);
+            createLink.appendChild(createImg);
+
+            createLink.setAttribute('class', 'movie-poster-link');
+            createLink.setAttribute('href', imdbMainLink + e.imdbID + '/');
+            createLink.setAttribute('target', '_blank');
+
+            createImg.setAttribute('class', 'movie-poster');
+            createImg.setAttribute('src', e.poster);
+            createImg.setAttribute('alt', e.title);
+            createImg.setAttribute('title', e.title);
+        })}
+
+        if(movieTitle == 'X-Men'){
+            let result2 = movies.filter(titel => titel.title.includes(stringTitel));
+
+            // Remove basic list
+            imgHolder.replaceChildren();
+
+            // create new list
+            result2.forEach(function(e){
+            let createLink = document.createElement('a');
+            let createImg = document.createElement('img');
+            imgHolder.appendChild(createLink);
+            createLink.appendChild(createImg);
+
+            createLink.setAttribute('class', 'movie-poster-link');
+            createLink.setAttribute('href', imdbMainLink + e.imdbID + '/');
+            createLink.setAttribute('target', '_blank');
+
+            createImg.setAttribute('class', 'movie-poster');
+            createImg.setAttribute('src', e.poster);
+            createImg.setAttribute('alt', e.title);
+            createImg.setAttribute('title', e.title);
+        })}
+
+        if(movieTitle == 'Princess'){
+            let result2 = movies.filter(titel => titel.title.includes(stringTitel));
+
+            // Remove basic list
+            imgHolder.replaceChildren();
+
+            // create new list
+            result2.forEach(function(e){
+            let createLink = document.createElement('a');
+            let createImg = document.createElement('img');
+            imgHolder.appendChild(createLink);
+            createLink.appendChild(createImg);
+
+            createLink.setAttribute('class', 'movie-poster-link');
+            createLink.setAttribute('href', imdbMainLink + e.imdbID + '/');
+            createLink.setAttribute('target', '_blank');
+
+            createImg.setAttribute('class', 'movie-poster');
+            createImg.setAttribute('src', e.poster);
+            createImg.setAttribute('alt', e.title);
+            createImg.setAttribute('title', e.title);
+        })}
+
+        if(movieTitle == 'Batman'){
+            let result2 = movies.filter(titel => titel.title.includes(stringTitel));
+
+            // Remove basic list
+            imgHolder.replaceChildren();
+
+            // create new list
+            result2.forEach(function(e){
+            let createLink = document.createElement('a');
+            let createImg = document.createElement('img');
+            imgHolder.appendChild(createLink);
+            createLink.appendChild(createImg);
+
+            createLink.setAttribute('class', 'movie-poster-link');
+            createLink.setAttribute('href', imdbMainLink + e.imdbID + '/');
+            createLink.setAttribute('target', '_blank');
+
+            createImg.setAttribute('class', 'movie-poster');
+            createImg.setAttribute('src', e.poster);
+            createImg.setAttribute('alt', e.title);
+            createImg.setAttribute('title', e.title);
+        })}
+    
+    })})
