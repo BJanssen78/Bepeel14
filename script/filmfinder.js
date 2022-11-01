@@ -6,6 +6,19 @@ const currentDate = new Date();
 const currentYear = currentDate.getFullYear();
 const opdrachtJaar = '2000';
 
+const searchBarBtn = document.getElementById('search-btn');
+// console.log(searchBarBtn);
+
+searchBarBtn.addEventListener('click', function(e){
+    // console.log(e.target);
+    let searchBarInput = document.getElementById('searchbalk').value;
+    console.log(searchBarInput);
+    // if(searchBarInput.innerText !=''){
+    //     console.log(searchBarInput);
+    // }
+    
+})
+
 let basicList = movies.forEach(function(e){// Basis vulling
 
     let createLink = document.createElement('a');
