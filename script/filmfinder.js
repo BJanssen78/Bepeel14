@@ -4,20 +4,8 @@ const imgHolder = document.querySelector('#content');
 const imdbMainLink = 'https://www.imdb.com/title/';
 const currentDate = new Date();
 const currentYear = currentDate.getFullYear();
-const opdrachtJaar = '2000';
-
-const searchBarBtn = document.getElementById('search-btn');
-// console.log(searchBarBtn);
-
-searchBarBtn.addEventListener('click', function(e){
-    // console.log(e.target);
-    let searchBarInput = document.getElementById('searchbalk').value;
-    console.log(searchBarInput);
-    // if(searchBarInput.innerText !=''){
-    //     console.log(searchBarInput);
-    // }
-    
-})
+const opdrachtJaar = '2014';
+const formSearchBar = document.forms['side-form-filter'];
 
 let basicList = movies.forEach(function(e){// Basis vulling
 
@@ -160,3 +148,45 @@ Array.from(filterLijst).forEach(function(radio){
         })}
     
     })})
+
+formSearchBar.addEventListener('submit', function(e){
+    e.preventDefault();
+    const searchValue = formSearchBar.querySelector('input[type="text"]').value;
+    console.log(searchValue);
+    
+    let result2 = movies.filter(titel => titel.title.includes(searchValue));
+    console.log(result2.length);
+        if(result2.length > 0){
+            // Remove basic list
+            imgHolder.replaceChildren();
+
+            // create new list
+            result2.forEach(function(e){
+                let createLink = document.createElement('a');
+                    let createImg = document.createElement('img');
+                    imgHolder.appendChild(createLink);
+                    createLink.appendChild(createImg);
+
+                    createLink.setAttribute('class', 'movie-poster-link');
+                    createLink.setAttribute('href', imdbMainLink + e.imdbID + '/');
+                    createLink.setAttribute('target', '_blank');
+
+                    createImg.setAttribute('class', 'movie-poster');
+                    createImg.setAttribute('src', e.poster);
+                    createImg.setAttribute('alt', e.title);
+                    createImg.setAttribute('title', e.title);
+        })
+        }
+        else{
+            imgHolder.replaceChildren();
+            const errorMsg = document.getElementById('content');
+            const createErrorMsg = document.createElement('p');
+
+            errorMsg.appendChild(createErrorMsg);
+            createErrorMsg.setAttribute('class', 'error-msg');
+            createErrorMsg.setAttribute('id', 'error-msg');
+            document.getElementById('error-msg').innerHTML = 'No results found, check your input, all title\'s are case sensitive';
+            // console.log(errorMsg);
+            // errorMsg;
+        }
+});
